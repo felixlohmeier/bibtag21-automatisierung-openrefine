@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Import the workspace into JupyterLab
+jupyter lab workspaces import $HOME/binder/workspace.json
+
+exec "$@"

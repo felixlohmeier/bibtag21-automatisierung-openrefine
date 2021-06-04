@@ -1,0 +1,68 @@
+[
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Geburtsdatum",
+    "expression": "grel:value.slice(-4)",
+    "onError": "set-to-blank",
+    "newColumnName": "Geburtsjahr",
+    "columnInsertIndex": 2,
+    "description": "Create column Geburtsjahr at index 2 based on column Geburtsdatum using expression grel:value.slice(-4)"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Name",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wikidata.reconci.link/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q5",
+        "name": "human"
+      },
+      "autoMatch": true,
+      "columnDetails": [
+        {
+          "column": "Geburtsjahr",
+          "propertyName": "date of birth",
+          "propertyID": "P569"
+        }
+      ],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column Name to type Q5"
+  },
+  {
+    "op": "core/extend-reconciled-data",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "Name",
+    "endpoint": "https://wikidata.reconci.link/en/api",
+    "identifierSpace": "http://www.wikidata.org/entity/",
+    "schemaSpace": "http://www.wikidata.org/prop/direct/",
+    "extension": {
+      "properties": [
+        {
+          "id": "P227",
+          "name": "GND ID"
+        },
+        {
+          "id": "P19",
+          "name": "place of birth"
+        }
+      ]
+    },
+    "columnInsertIndex": 1,
+    "description": "Extend data at index 1 based on column Name"
+  }
+]
