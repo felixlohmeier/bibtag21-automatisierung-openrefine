@@ -1,8 +1,8 @@
 # bibtag21-automatisierung-openrefine
 
-Begleitende Materialien für den Vortrag "Automatisierungsmöglichkeiten der Software OpenRefine" auf dem 109. Bibliothekartag, 16.6.2021
+Begleitende Materialien für den Vortrag [Automatisierungsmöglichkeiten der Software OpenRefine](https://felixlohmeier.de/slides/2021-06-16_bibtag21_automatisierung-openrefine.html) auf dem 109. Bibliothekartag, 16.6.2021
 
-Live-Präsentation mitverfolgen:
+Live-Vorführung mitverfolgen:
 
 1. Arbeitsumgebung mit Jupyter Lab bei mybinder.org starten:
 
